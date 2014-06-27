@@ -1,0 +1,14 @@
+package com.sinopec.common;
+
+/**
+ * Created with IntelliJ IDEA. User: gaochuanjun Date: 13-10-30 Time: 下午4:34 To
+ * change this template use File | Settings | File Templates.
+ */
+public class OracleSQL {
+
+	// 插入计算节点一月信息表SQL语句
+	public static String insertComputeOneMonthSQL = "insert into ComputeNodeStatusOneMonthHis values(?,to_date(?,'YYYY-MM-DD HH24:MI:SS'),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+	// 插入计算节点三月信息标SQL语句
+	public static String insertComputeThreeMonthSQL = "insert into ComputeNodeStatusThreeMonthHis values(?,to_date(?,'YYYY-MM-DD HH24:MI:SS'),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+}

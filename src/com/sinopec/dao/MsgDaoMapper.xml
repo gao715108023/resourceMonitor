@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.sinopec.dao.MsgDao">
+    
+    <select id="selectNodeInfoSampleConfigureBean" resultType="com.sinopec.bean.NodeInfoSampleConfigureBean">
+        select * from NodeInfoSampleConfigureBean where NodeName=#{nodeName}
+    </select>
+    
+    <insert id="insertComputeNodeStatus" parameterType="com.sinopec.bean.ComputeNodeStatusBean">
+        insert into ComputeNodeStatus(NodeName,UpdateTime,OneMinsProcs,FiveMinsProcs,FifteenMinsProcs,
+        UserTime,NiceTime,SystemTime,IowaitTime,IdleTime,AllUserTime,AllNiceTime,AllSystemTime,AllIowaitTime,AllIdleTime,
+        TotalMemory,UsedMemory,IdleMemory,SwapSize,UsedSwap,IdleSwap,
+        IoTs,ReadSpeed,ReadKB,WriteSpeed,WriteKB,
+        InReceivesPs,InDeliversPs,OutRequestsPs,InSegsPs,OutSegsPs,RetransSegsPs,InDatagramsPs,OutDatagramsPs)
+        values(#{nodeName},#{updateTime},#{oneMinsProcs},#{fiveMinsProcs},#{fifteenMinsProcs},
+        #{userTime},#{niceTime},#{systemTime},#{iowaitTime},#{idleTime},
+        #{allUserTime},#{allNiceTime},#{allSystemTime},#{allIowaitTime},#{allIdleTime},
+        #{totalMemory},#{usedMemory},#{idleMemory},#{swapSize},#{usedSwap},#{idleSwap},
+        #{ioTs},#{readSpeed},#{readKB},#{writeSpeed},#{writeKB},
+        #{inReceivesPs},#{inDeliversPs},#{outRequestsPs},#{inSegsPs},#{outSegsPs},#{retransSegsPs},#{inDatagramsPs},
+        #{outDatagramsPs})
+    </insert>
+    
+    <select id="selectComputeNodeStatus" resultType="com.sinopec.bean.ComputeNodeStatusBean">
+        select * from ComputeNodeStatus where NodeName=#{nodeName}
+    </select>
+    
+    <update id="updateComputeNodeStatus" parameterType="com.sinopec.bean.ComputeNodeStatusBean">
+        update ComputeNodeStatus set UpdateTime=#{updateTime},OneMinsProcs=#{oneMinsProcs},FiveMinsProcs=#{fiveMinsProcs},FifteenMinsProcs=#{fifteenMinsProcs},UserTime=#{userTime},NiceTime=#{niceTime},SystemTime=#{systemTime},IowaitTime=#{iowaitTime},IdleTime=#{idleTime},AllUserTime=#{allUserTime},AllNiceTime=#{allNiceTime},AllSystemTime=#{allSystemTime},AllIowaitTime=#{allIowaitTime},AllIdleTime=#{allIdleTime},TotalMemory=#{totalMemory},UsedMemory=#{usedMemory},IdleMemory=#{idleMemory},SwapSize=#{swapSize},UsedSwap=#{usedSwap},IdleSwap=#{idleSwap},IoTs=#{ioTs},ReadSpeed=#{readSpeed},ReadKB=#{readKB},WriteSpeed=#{writeSpeed},WriteKB=#{writeKB},InReceivesPs=#{inReceivesPs},InDeliversPs=#{inDeliversPs},OutRequestsPs=#{outRequestsPs},InSegsPs=#{inSegsPs},OutSegsPs=#{outSegsPs},RetransSegsPs=#{retransSegsPs},InDatagramsPs=#{inDatagramsPs},OutDatagramsPs=#{outDatagramsPs} where NodeName=#{nodeName}
+    </update>
+</mapper>
